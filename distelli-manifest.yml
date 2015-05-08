@@ -15,6 +15,10 @@
 
   PreInstall:
     - echo "Beginning PreInstall"
+    # If your destination server does not have PHP installed
+    # You can unremark the 2 below lines to preinstall on deployment
+    #- sudo apt-get update
+    #- sudo apt-get install php5-cli
 
   Exec:
     - 'php -S 0.0.0.0:$PORT simpleapp.php'
