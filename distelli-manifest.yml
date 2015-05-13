@@ -4,7 +4,7 @@
   #
   # OS: Ubuntu
   # Installed Packages:
-  #   php >= 5.0   [sudo apt-get install php5-cli]
+  #   php >= 5.4   [sudo apt-get install php5-cli]
   #
 
   Env:
