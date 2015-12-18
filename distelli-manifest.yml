@@ -1,11 +1,4 @@
-<username>/PHPUbuntuSimpleApp:
-  # This Basic Distelli Manifest assumes the following
-  # has been provisioned on the destination deploy server:
-  #
-  # OS: Ubuntu
-  # Installed Packages:
-  #   php >= 5.4   [sudo apt-get install php5-cli]
-  #
+zchase/phpApache:
 
   Env:
     - PORT: "8006"
@@ -15,10 +8,8 @@
 
   PreInstall:
     - echo "Beginning PreInstall"
-    # If your destination server does not have PHP installed
-    # You can unremark the 2 below lines to preinstall on deployment
-    #- sudo apt-get update
-    #- sudo apt-get install -y php5-cli
+    - sudo apt-get update
+    - sudo apt-get install -y php5-cli
 
   Exec:
     - 'php -S 0.0.0.0:$PORT simpleapp.php'
