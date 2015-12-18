@@ -6,7 +6,16 @@ zchase/phpApache:
   PreInstall:
     - echo "Beginning PreInstall"
     - sudo apt-get update
-    - sudo apt-get install php5 libapache2-mod-php5 -y
+    - 'if [ -a /usr/sbin/apache2 ]; then'
+    -     echo "Apache is already installed"
+    - else
+    -     sudo apt-get install apache2 -y
+    - fi
+    - 'if [ -a /usr/bin/php ]; then'
+    -     echo "PHP is already installed"
+    - else
+    -     sudo apt-get install php5 libapache2-mod-php5 -y
+    - fi
 
   Start:
     - sudo rm -rf /var/www/html/*
