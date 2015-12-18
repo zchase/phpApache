@@ -7,7 +7,9 @@ zchase/phpApache:
     - echo "Beginning PreInstall"
     - sudo apt-get update
     - sudo apt-get install php5 libapache2-mod-php5 -y
+    - sudo rm -rf /var/www/html/*
 
   Exec:
+    - mv index.php /var/www/html/
     - sudo service apache2 restart 
 
