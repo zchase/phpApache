@@ -10,5 +10,5 @@ zchase/phpApache:
     - sudo rm -rf /var/www/html/*
 
   Exec:
-    - mv index.php /var/www/html/
+    - sudo mv index.php /var/www/html/
     - sudo service apache2 restart 
